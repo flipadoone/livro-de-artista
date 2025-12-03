@@ -1,0 +1,418 @@
+/* VARIÁVEIS */
+:root {
+  --bg-escuro: #0f0f10;
+  --texto-claro: #fdfdfd;
+  --destaque: #A8C434;
+  --fonte-titulo: 'Cinzel', serif;
+  --fonte-corpo: 'Lato', sans-serif;
+}
+
+/* Estilos globais para imagens */
+img {
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  background: #090909;
+  color: var(--texto-claro);
+  line-height: 1.7; /* Aumenta a legibilidade */
+}
+
+/* TOPO */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 220;
+  display: flex;
+  justify-content: center; /* Centraliza o menu */
+  align-items: center;
+  padding: 0.5rem 2rem; /* Padding vertical ajustado */
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(168, 196, 52, 0.2);
+}
+
+/* Removido o seletor .logo pois não é mais necessário */
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--texto-claro);
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  transition: color 0.3s;
+  padding: 0; /* Remove padding para não interferir no alinhamento */
+  background: none !important;
+}
+
+.logo-link:hover {
+  color: var(--destaque);
+  background: none; /* Remove o fundo no hover para o logo */
+}
+
+.logo-link img {
+  width: 100px; /* Tamanho do logo dobrado */
+  height: 100px; /* Tamanho do logo dobrado */
+  transition: transform 0.2s; /* Transição mais suave */
+  box-shadow: none; /* Remove sombra do logo para não poluir o header */
+  border-radius: 50%;
+  display: block;
+}
+
+.logo-link:hover img {
+  transform: scale(1.1); /* Efeito de hover mais pronunciado */
+  filter: drop-shadow(0 0 12px var(--destaque)); /* Adiciona brilho dourado */
+}
+
+/* Removido o seletor .logo-link span */
+
+.menu {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; /* Alinha verticalmente o logo e os links */
+}
+
+.menu a {
+  color: var(--texto-claro);
+  text-decoration: none;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  transition: all 0.2s;
+}
+
+.menu a:hover {
+  background: var(--destaque);
+  color: #000;
+}
+
+/* HERO */
+.hero {
+  padding: 3rem 6vw 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh; /* Um pouco mais de altura */
+}
+
+.hero-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.hero-bg {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  padding: 1.25rem; /* Reduzido para dar mais foco à imagem */
+  background: #111;
+  border: 1px solid rgba(168, 196, 52, 0.2);
+}
+
+.imagem-hero-sobre {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px; /* Raio menor para a imagem dentro do container */
+}
+
+.titulo-hero {
+  margin-top: 1.25rem;
+  font-family: var(--fonte-titulo);
+  font-size: 2.8rem; /* Um pouco maior */
+  letter-spacing: 0.15em; /* Mais espaçamento */
+  text-transform: uppercase;
+  color: var(--texto-claro);
+  text-shadow: 0 0 15px rgba(168, 196, 52, 0.5); /* Brilho sutil */
+}
+
+.sub-hero {
+  margin-top: 0.75rem;
+  opacity: 0.9;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1rem;
+}
+
+/* SEÇÕES E CONTEÚDO */
+.secao {
+  position: relative; /* Necessário para o z-index funcionar corretamente */
+  z-index: 1;
+  min-height: 70vh;
+  padding: 5rem 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conteudo {
+  max-width: 920px;
+  width: 100%;
+}
+
+.conteudo h2 {
+  margin-bottom: 1.5rem;
+  font-family: var(--fonte-titulo);
+  font-size: 2.4rem; /* Ajuste de tamanho */
+  color: var(--destaque);
+  border-bottom: 1px solid var(--destaque); /* Linha mais fina */
+  padding-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.conteudo h3 {
+  margin-top: 2.5rem; /* Mais espaço acima */
+  margin-bottom: 1rem;
+  color: var(--destaque);
+  font-size: 1.5rem; /* Ajuste de tamanho */
+  font-family: var(--fonte-titulo);
+  letter-spacing: 0.03em;
+}
+
+.conteudo p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.conteudo ul, .conteudo ol {
+  margin-left: 1.5rem; /* Ajuste de recuo */
+  margin-bottom: 1rem;
+}
+
+.conteudo li {
+  margin-bottom: 0.75rem; /* Mais espaço entre itens */
+  padding-left: 0.5rem;
+}
+
+.conteudo ul li::marker {
+  color: var(--destaque);
+  font-size: 1.2em;
+}
+
+.conteudo ol {
+  list-style-type: none;
+  counter-reset: item;
+}
+
+.conteudo ol li {
+  counter-increment: item;
+  position: relative;
+}
+
+.conteudo ol li::before {
+  content: counter(item);
+  position: absolute;
+  left: -2
+}
+
+/* --- LAYOUTS DE CONTEÚDO ESTILIZADOS --- */
+
+/* Transforma o .conteudo em um container flexível */
+.secao .conteudo {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  gap: 2rem 4rem; /* Espaçamento entre os blocos (vertical e horizontal) */
+  align-items: flex-start; /* Alinha os itens no topo */
+}
+
+/* Cria um container para o texto para agrupar h3, ul, ol */
+.secao .texto-material {
+  flex: 1; /* Ocupa o espaço disponível */
+  min-width: 300px; /* Largura mínima antes de quebrar a linha */
+}
+
+/* Estilo base para a imagem do material */
+.imagem-material {
+  flex-basis: 340px; /* Largura base da imagem */
+  flex-shrink: 0; /* Impede que a imagem encolha */
+  border: 1px solid rgba(168, 196, 52, 0.15);
+  padding: 0.5rem;
+  background: #111;
+  border-radius: 18px; /* Bordas mais arredondadas */
+}
+
+/* Layout Invertido: Imagem primeiro (à esquerda) */
+.layout-invertido .imagem-material {
+  order: -1; /* Move a imagem para o início da ordem do flexbox */
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA CADA SEÇÃO --- */
+
+/* Seção ÓLEO: Imagem com mais destaque */
+#oleo .imagem-material {
+  flex-basis: 400px; /* Imagem um pouco maior */
+  align-self: center; /* Centraliza verticalmente no container */
+}
+
+/* Seção CARVÃO: Layout mais simples e direto */
+#carvao .conteudo {
+  flex-direction: column; /* Empilha os itens verticalmente */
+  align-items: center; /* Centraliza tudo */
+  text-align: center;
+}
+
+#carvao .imagem-material {
+  max-width: 500px; /* Imagem maior e centralizada */
+  margin-bottom: 2rem;
+}
+
+/* --- ESTILOS PARA SEÇÕES ESPECIAIS --- */
+
+/* PORTFÓLIO */
+.secao-portfolio {
+  background: linear-gradient(to bottom, #0f0f10, #0a0a0a);
+}
+
+.grade-portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 0;
+}
+
+.item-portfolio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* CONTATO (FOOTER) */
+.secao-contato {
+  background: #0a0a0a;
+  border-top: 1px solid rgba(168, 196, 52, 0.2);
+  text-align: center;
+  padding: auto;
+}
+
+.secao-contato p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* ELEMENTO ROTACIONAL — 3x o tamanho original(120->360), metade fora da tela */
+.rotacao-scroll{
+  position:fixed;
+  right:-180px;
+  bottom:40px;
+  width:360px;
+  height:360px;
+  z-index:140;
+  pointer-events:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform-origin:center center;
+  transition:opacity .4s ease-out;
+}
+.rotacao-scroll img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 32px rgba(0,0,0,.5));
+}
+
+/* Evita que o círculo encoste nas letras: adicionamos padding-right no main (somente telas grandes */
+
+.receita-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.coluna-receita h3 {
+  margin-top: 0;
+}
+
+/* Em telas menores, as colunas ficam uma sobre a outra */
+@media (max-width: 768px) {
+  .receita-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Divisor */
+.divisor {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 80%;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+/* fade-in */
+.fade-in-up{opacity:0;transform:translateY(40px);transition:all .7s cubic-bezier(.23,1,.32,1)}
+.fade-in-up.visivel{opacity:1;transform:none}
+
+/* NOVOS ESTILOS ADICIONADOS */
+.sobre-mim-texto {
+  flex: 1; /* Ocupa o espaço restante */
+}
+
+/* Layout horizontal para seções de material */
+.layout-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.layout-horizontal .texto-material {
+  flex: 1;
+}
+.layout-horizontal.layout-invertido {
+  flex-direction: row-reverse;
+}
+
+
+/* MATERIAL */
+.imagem-material{
+  max-width: 340px; /* Reduz a largura máxima da imagem */
+  width:100%;
+  border-radius:16px;
+}
+.material-text{margin-top:1rem;text-align:left}
+
+/* Animação de Rotação */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Aplica a rotação às imagens específicas */
+#acrilica .imagem-material,
+#nanquim .imagem-material,
+#carvao .imagem-material {
+  animation: rotate 25s linear infinite;
+}
